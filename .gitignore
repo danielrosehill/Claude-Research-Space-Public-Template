@@ -2,6 +2,13 @@
 .env
 .env.local
 
+# Private researcher notes (never commit)
+private/*
+!private/.gitkeep
+
+# MCP configuration (contains credentials)
+.mcp.json
+
 # OS
 .DS_Store
 Thumbs.db

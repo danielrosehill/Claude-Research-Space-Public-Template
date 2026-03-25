@@ -53,20 +53,39 @@ cat > "$TARGET/context/from-human/research-brief.md" << 'EOF'
 
 
 
+## Intended Audience
+
+<!-- Who will read this research? This repo is public — describe who you're writing for. -->
+
 ## Desired Output
 
+<!-- What form should the final deliverable take? Blog post, report, briefing doc, social thread? -->
+
+## Licensing
+
+<!-- How should others use your findings? Default: MIT -->
+
 EOF
+
+# Ensure private directory exists
+mkdir -p "$TARGET/private"
+touch "$TARGET/private/.gitkeep"
+
+# Ensure published output directory exists
+mkdir -p "$TARGET/outputs/published"
+touch "$TARGET/outputs/published/.gitkeep"
 
 # Initialise fresh git repo
 cd "$TARGET"
 git init
 git add -A
-git commit -m "Initialise research workspace: $PROJECT_NAME"
+git commit -m "Initialise public research workspace: $PROJECT_NAME"
 
 echo ""
-echo "Research workspace created at: $TARGET"
+echo "Public research workspace created at: $TARGET"
 echo "Next steps:"
 echo "  1. cd $TARGET"
 echo "  2. Edit context/from-human/research-brief.md"
 echo "  3. Add your first prompt to prompts/run/initial/"
 echo "  4. Open in Claude Code and start researching"
+echo "  5. Everything committed is public — use private/ for off-record notes"
