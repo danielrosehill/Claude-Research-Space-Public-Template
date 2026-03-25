@@ -1,6 +1,6 @@
 [![Claude Code Projects Index](https://img.shields.io/badge/Claude%20Code-Projects%20Index-blue?style=flat-square&logo=github)](https://github.com/danielrosehill/Claude-Code-Repos-Index)
 
-> **See also**: [Claude Research Workspace](https://github.com/danielrosehill/claude-research-workspace) — the private/personal version of this template (no public-audience features, no export commands).
+> **See also**: [Claude Research Workspace](https://github.com/danielrosehill/Claude-Research-Workspace-General-Template) — the private/personal version of this template (no public-audience features, no export commands).
 
 # Open Research Workspace — Claude Code Template
 
