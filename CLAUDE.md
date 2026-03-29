@@ -22,10 +22,25 @@ This is a **public research workspace** powered by Claude Code. It uses a folder
 | `outputs/aggregated/pdf/` | PDF exports of aggregated research |
 | `outputs/final/` | Polished deliverables |
 | `outputs/published/` | Export-ready formats (blog posts, reports, social threads) |
+| `voice-notes/` | Timestamped folders containing audio files, raw transcripts, and generated prompts |
+| `scripts/` | Helper scripts (e.g., `transcribe.py` for AssemblyAI transcription) |
 | `notes/` | Working notes, observations, methodology |
 | `private/` | Researcher's private notes (gitignored, never committed) |
 
 ## Research Workflow
+
+### Voice note workflow
+
+Use `/voice-note` to go from a voice recording to a running research prompt in one step:
+
+1. Place an audio file in the project root (or provide a path)
+2. The command creates `voice-notes/YYYY-MM-DD-HHMMSS/` containing:
+   - The original audio file (copied)
+   - `raw-transcript.md` — verbatim AssemblyAI transcription
+   - `research-prompt.md` — cleaned, structured research prompt
+3. The prompt is copied to `prompts/queue/` and can be run immediately
+
+This requires an AssemblyAI API key in `.env`. See `.env.example` and `publishing-config.example.json` for setup.
 
 ### Running a prompt
 

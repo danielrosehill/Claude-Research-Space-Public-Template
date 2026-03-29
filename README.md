@@ -34,9 +34,17 @@ Edit `context/from-human/research-brief.md` with:
 - **Intended audience** — who will read this?
 - **Licensing** — how should others use your findings?
 
-### 3. Write your first prompt
+### 3. Write your first prompt (or record a voice note)
 
-Create a prompt in `prompts/run/initial/` describing what you want to investigate. See the example prompt for the format.
+**Option A — Write it:** Create a prompt in `prompts/run/initial/` describing what you want to investigate. See the example prompt for the format.
+
+**Option B — Speak it:** Record a voice note, drop the audio file in the project root, and run:
+
+```
+/voice-note
+```
+
+This transcribes your recording via AssemblyAI, distills it into a structured research prompt, and queues it — preserving the audio, raw transcript, and cleaned prompt in a timestamped `voice-notes/` folder. Requires an AssemblyAI API key in `.env` (see `.env.example`).
 
 ### 4. Run it
 
@@ -56,6 +64,7 @@ Open the repo in Claude Code and tell it to run the prompt:
 ## Directory Structure
 
 ```
+├── .env.example                 # API keys template (copy to .env)
 ├── CLAUDE.md                    # System instructions for Claude Code
 ├── context/
 │   ├── from-human/              # Your research brief and background info
@@ -75,7 +84,10 @@ Open the repo in Claude Code and tell it to run the prompt:
 │   ├── published/               # Export-ready formats (blog, report, social)
 │   └── final/                   # Polished deliverables
 ├── private/                     # Researcher's private notes (gitignored)
+├── scripts/
+│   └── transcribe.py            # AssemblyAI transcription helper
 ├── slash-commands/              # Custom Claude Code slash commands
+├── voice-notes/                 # Timestamped voice note artifacts
 └── notes/                       # Working notes and methodology
 ```
 
@@ -127,6 +139,7 @@ Open the repo in Claude Code and tell it to run the prompt:
 | `/status` | Show research progress |
 | `/export` | Format outputs for publishing (blog, report, brief, social, newsletter) |
 | `/publish-readme` | Regenerate README.md with current findings for external readers |
+| `/voice-note` | Transcribe a voice recording → structured research prompt → queue |
 | `/setup-publishing` | Scaffold `.mcp.json` for CMS/publishing integrations |
 
 ## For Readers

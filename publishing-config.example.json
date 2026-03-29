@@ -1,6 +1,13 @@
 {
   "_comment": "Copy this to .mcp.json and fill in your credentials. Do NOT commit .mcp.json — it's gitignored.",
   "mcpServers": {
+    "assemblyai": {
+      "command": "npx",
+      "args": ["-y", "assembly-ai-mcp@latest"],
+      "env": {
+        "ASSEMBLYAI_API_KEY": "${ASSEMBLYAI_API_KEY}"
+      }
+    },
     "wordpress": {
       "command": "npx",
       "args": ["-y", "@anthropic/mcp-wordpress"],

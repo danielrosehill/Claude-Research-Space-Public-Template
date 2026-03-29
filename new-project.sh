@@ -75,6 +75,13 @@ touch "$TARGET/private/.gitkeep"
 mkdir -p "$TARGET/outputs/published"
 touch "$TARGET/outputs/published/.gitkeep"
 
+# Ensure voice-notes directory exists
+mkdir -p "$TARGET/voice-notes"
+touch "$TARGET/voice-notes/.gitkeep"
+
+# Ensure scripts directory exists
+mkdir -p "$TARGET/scripts"
+
 # Initialise fresh git repo
 cd "$TARGET"
 git init
@@ -86,6 +93,7 @@ echo "Public research workspace created at: $TARGET"
 echo "Next steps:"
 echo "  1. cd $TARGET"
 echo "  2. Edit context/from-human/research-brief.md"
-echo "  3. Add your first prompt to prompts/run/initial/"
-echo "  4. Open in Claude Code and start researching"
-echo "  5. Everything committed is public — use private/ for off-record notes"
+echo "  3. (Optional) Copy .env.example to .env and add your AssemblyAI key for voice notes"
+echo "  4. Add your first prompt to prompts/run/initial/ — or use /voice-note"
+echo "  5. Open in Claude Code and start researching"
+echo "  6. Everything committed is public — use private/ for off-record notes"

@@ -6,7 +6,9 @@
       "Bash(pandoc *)",
       "Bash(wc *)",
       "Bash(mv *)",
-      "Bash(ls *)"
+      "Bash(ls *)",
+      "Bash(python3 scripts/transcribe.py *)",
+      "Bash(cp *)"
     ]
   }
 }
